@@ -24,6 +24,7 @@
  * the old classes since the employee class depends on those
  */
 
+
 public class Employee {
 	private int id;
 	private Name name;
@@ -32,11 +33,14 @@ public class Employee {
 	
 	
 	public Employee (int id, Name name, Address address, Date hired) {
-		
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.hired = hired;
 	}
 }
 
-// name
+// old name class
 class Name {
 	private String firstName, lastName;
 	
@@ -67,11 +71,41 @@ class Name {
 	}	
 }
 
-// address
+// old address class
 class Address {
 	private String street, city, state, zipCode;
 	
+	public String getStreet() {
+		return street;
+	}
 	
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	
+	public void setCity(String city) {
+		this.street = city;
+	}
+	
+	public String getState() {
+		return state;
+	}
+	
+	public void setState(String state) {
+		this.state = state;
+	}
+	
+	public String getZipCode() {
+		return zipCode;
+	}
+	
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
 	
 	public Address(String street, String city, String state, String zipCode) {
 		super();
@@ -85,6 +119,50 @@ class Address {
 		return street + " " + city + " " + state + " " + zipCode;
 	}
 }
+
+// old date class
+class Date {
+	private int day, month, year;
+	
+	public int getDay() {
+		return day;
+	}
+	
+	public void setDay(int day) {
+		this.day = day;
+	}
+	
+	public int getMonth() {
+		return month;
+	}
+	
+	public void setMonth(int month) {
+		this.month = month;
+	}
+	
+	public int getyear() {
+		return year;
+	}
+	
+	public void setYear(int year) {
+		this.year = year;
+	}
+	
+	public Date(int day, int month, int year) {
+		super();
+		this.day = day;
+		this.month = month;
+		this.year = year;
+	}
+	
+	public String toString() {
+		return day + " " + month + " " + year;
+	}
+}
+
+/*
+ * Test class for the program.
+ */
 
 /*
  * Here is the main class that will have all of the project's logic and major control flow.
