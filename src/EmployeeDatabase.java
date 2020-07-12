@@ -20,10 +20,71 @@
  */
 
 /*
- * Here I will set up my old employee class to use.
+ * Here I will set up my old employees' classes to use the project. However I will also need to use
+ * the old classes since the employee class depends on those
  */
 
+public class Employee {
+	private int id;
+	private Name name;
+	private Address address;
+	private Date hired;
+	
+	
+	public Employee (int id, Name name, Address address, Date hired) {
+		
+	}
+}
 
+// name
+class Name {
+	private String firstName, lastName;
+	
+	public String getFirst() {
+		return firstName;
+	}
+	
+	public void setFirst(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLast() {
+		return lastName;
+	}
+	
+	public void setLast(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public Name(String firstName, String lastName) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+	public String toString() {
+		return firstName + " " + lastName;
+	}	
+}
+
+// address
+class Address {
+	private String street, city, state, zipCode;
+	
+	
+	
+	public Address(String street, String city, String state, String zipCode) {
+		super();
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.zipCode = zipCode;
+	}
+	
+	public String toString() {
+		return street + " " + city + " " + state + " " + zipCode;
+	}
+}
 
 /*
  * Here is the main class that will have all of the project's logic and major control flow.
