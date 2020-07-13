@@ -24,19 +24,57 @@
  * the old classes since the employee class depends on those
  */
 
-
-public class Employee {
+class Employee {
 	private int id;
 	private Name name;
 	private Address address;
 	private Date hired;
 	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public Name getName() {
+		return name;
+	}
+	
+	public void setName(Name name) {
+		this.name = name;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+	
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public Date getDate() {
+		return hired;
+	}
+	
+	public void setDate(Date hired) {
+		this.hired = hired;
+	}
 	
 	public Employee (int id, Name name, Address address, Date hired) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.hired = hired;
+	}
+	
+	public void showInfo() {
+		System.out.println("Id: " + id);
+		System.out.println("Name: " + name);
+		System.out.println("Address: " + address);
+		System.out.println("Hired On: " + hired);
 	}
 }
 
@@ -160,19 +198,31 @@ class Date {
 	}
 }
 
-/*
- * Test class for the program.
- */
+
 
 /*
- * Here is the main class that will have all of the project's logic and major control flow.
+ * Here is the main class that will have all of the project's logic and major control flow. This is where the test class
+ * will be to test the program.
  */
 
 public class EmployeeDatabase {
 
 	public static void main(String[] args) {
-		System.out.println("works.");
+		headerMsg();
+		
+		Scanner EmployeeDoc = new Scanner(new File("EmployeeList.txt"));
 
+	}
+	
+	public static void headerMsg() {
+		System.out.println("\n");
+		System.out.println("+------------------------------------------------------------------------------+");
+		System.out.println("|                                   Welcome User,                              |");
+		System.out.println("|         This application will display the salary information of a few        |");
+		System.out.println("|    employee's in a ficticious company. Please press enter to start the app.  |");
+		System.out.println("|                                   Let's start!                               |");
+		System.out.println("+------------------------------------------------------------------------------+");
 	}
 
 }
+
