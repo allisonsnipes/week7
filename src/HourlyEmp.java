@@ -63,9 +63,5 @@ public class HourlyEmp extends Employee {
 		this.hourlySalary = hourlySalary;
 		this.workedHr = workedHr;
 	}
-	
-	public String toString() {
-		return " $" + earned + " $" + hourlySalary + " " + workedHr;
-	}
 
 }

@@ -23,7 +23,7 @@
  * Here I will set up the subclass for a salaried employee which extends from the employee class.
  */
 
-public class SalariedEmp extends Employee{
+public class SalariedEmp extends Employee {
 	
 	private double yearlySalary;
 	
@@ -35,13 +35,9 @@ public class SalariedEmp extends Employee{
 		this.yearlySalary = yearlySalary;
 	}
 	
-	public SalariedEmp(double yearlySalary, int id, Name name, Address address, Date hired) {
+	public SalariedEmp(int id, Name name, Address address, Date hired, double yearlySalary) {
 		super(id, name, address, hired);
 		this.yearlySalary = yearlySalary;
-	}
-	
-	public String toString() {
-		return " $" + yearlySalary + " ";
 	}
 
 }

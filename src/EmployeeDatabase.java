@@ -69,7 +69,7 @@ class Employee {
 		this.address = address;
 		this.hired = hired;
 	}
-	
+
 	public void showInfo() {
 		System.out.println("Id: " + id);
 		System.out.println("Name: " + name);
@@ -98,7 +98,7 @@ class Name {
 		this.lastName = lastName;
 	}
 	
-	public Name(String firstName, String lastName) {
+	public Name(String firstName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -145,7 +145,7 @@ class Address {
 		this.zipCode = zipCode;
 	}
 	
-	public Address(String street, String city, String state, String zipCode) {
+	public Address(String street) {
 		super();
 		this.street = street;
 		this.city = city;
@@ -198,11 +198,12 @@ class Date {
 	}
 }
 
-
+/*
+ * Test class for the program.
+ */
 
 /*
- * Here is the main class that will have all of the project's logic and major control flow. This is where the test class
- * will be to test the program.
+ * Here is the main class that will have all of the project's logic and major control flow.
  */
 
 public class EmployeeDatabase {
@@ -210,7 +211,51 @@ public class EmployeeDatabase {
 	public static void main(String[] args) {
 		headerMsg();
 		
-		Scanner EmployeeDoc = new Scanner(new File("EmployeeList.txt"));
+		// format: HourlyEmp(double earned, double hourlySalary, double workedHr, int id, Name name, Address address, Date hired)
+		System.out.println("\n+--- Hourly Employee 1: Less Than 40hrs ---+\n");
+		HourlyEmp emp1 = new HourlyEmp (0, 25, 24, 0, null, null, null);
+		emp1.setId(001);
+		emp1.setName(new Name("Jon Deare"));
+		emp1.setAddress(new Address("123 Seseme St, SanFrancisco, 99912"));
+		//emp1.setDate(new Date("July 20 2020"));
+		
+		System.out.println("id: " + emp1.getId());
+		System.out.println("Name: " + emp1.getName());
+		System.out.println("Address: " + emp1.getAddress());
+		System.out.println("Hired: " + emp1.getDate());
+		//System.out.println("Salary: " + emp1.getYearlySalary());
+		
+		//format: HourlyEmp(double earned, double hourlySalary, double workedHr, int id, Name name, Address address, Date hired)
+		System.out.println("\n+--- Hourly Employee 2: Works more than 40hrs---+\n");
+		HourlyEmp emp2 = new HourlyEmp (0, 50, 80, 0, null, null, null);
+		emp2.setId(002);
+		emp2.setName(new Name("Yasmin Washington"));
+		emp2.setAddress(new Address("500 Battery St, SanFrancisco, 94111"));
+		//emp2.setDate(new Date("July 4 2020"));
+		
+		System.out.println("id: " + emp2.getId());
+		System.out.println("Name: " + emp2.getName());
+		System.out.println("Address: " + emp2.getAddress());
+		System.out.println("Hired: " + emp2.getDate());
+		//System.out.println("Salary: " + emp2.getYearlySalary());
+		
+		
+		
+		System.out.println("\n+--- Salaried Employee ---+\n");
+		// format: int id, Name name, Address address, Date hired, double yearlySalary
+		SalariedEmp emp3 = new SalariedEmp(0, null, null, null, 0);
+		emp3.setId(03);
+		emp3.setName(new Name("Georgie Santana"));
+		emp3.setAddress(new Address("\n3 Civic St SanFrancisco ca 94111\n"));
+		//emp3.getDate(new Date("July 13 2010"));
+		
+		System.out.println("id: " + emp3.getId());
+		System.out.println("Name: " + emp3.getName());
+		System.out.println("Address: " + emp3.getAddress());
+		System.out.println("Hired: " + emp3.getDate());
+		System.out.println("Salary: " + emp3.getYearlySalary());
+		
+		
 
 	}
 	
@@ -218,11 +263,10 @@ public class EmployeeDatabase {
 		System.out.println("\n");
 		System.out.println("+------------------------------------------------------------------------------+");
 		System.out.println("|                                   Welcome User,                              |");
-		System.out.println("|         This application will display the salary information of a few        |");
+		System.out.println("|          This application will display the salary information of a few       |");
 		System.out.println("|    employee's in a ficticious company. Please press enter to start the app.  |");
 		System.out.println("|                                   Let's start!                               |");
 		System.out.println("+------------------------------------------------------------------------------+");
 	}
 
 }
-
