@@ -20,9 +20,9 @@
  */
 
 /*
- * Here is the sub class for hourly Employee that worked more than 40hours and for those who
- * work their normal 40hrs or less work week. I will need to code it as the same subclass
- * but use an if else statement to account for OT hours.
+ * Here is the sub class for hourly Employee that worked more than 40hours and for the other that
+ * worked their normal 40hrs (or less work week). I will need to code it as the same subclass
+ * but use an if else statement to account for OT hours worked.
  */
 
 public class HourlyEmp extends Employee {
@@ -57,8 +57,8 @@ public class HourlyEmp extends Employee {
 		this.workedHr = workedHr;
 	}
 	
-	public HourlyEmp(double earned, double hourlySalary, double workedHr, int id, Name name, Address address, Date hired) {
-		super(id, name, address, hired);
+	public HourlyEmp(double earned, double hourlySalary, double workedHr, int id, Name name, Address address, int date) {
+		super(id, name, address, date);
 		this.earned = earned;
 		this.hourlySalary = hourlySalary;
 		this.workedHr = workedHr;

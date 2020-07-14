@@ -35,8 +35,8 @@ public class SalariedEmp extends Employee {
 		this.yearlySalary = yearlySalary;
 	}
 	
-	public SalariedEmp(int id, Name name, Address address, Date hired, double yearlySalary) {
-		super(id, name, address, hired);
+	public SalariedEmp(double yearlySalary, int id, Name name, Address address, int date) {
+		super(id, name, address, date);
 		this.yearlySalary = yearlySalary;
 	}
 

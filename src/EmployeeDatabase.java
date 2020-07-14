@@ -28,7 +28,7 @@ class Employee {
 	private int id;
 	private Name name;
 	private Address address;
-	private Date hired;
+	private int date;
 	
 	public int getId() {
 		return id;
@@ -54,27 +54,27 @@ class Employee {
 		this.address = address;
 	}
 	
-	public Date getDate() {
-		return hired;
+	public int getDate() {
+		return date;
 	}
 	
-	public void setDate(Date hired) {
-		this.hired = hired;
+	public void setDate(int date) {
+		this.date = date;
 	}
 	
-	public Employee (int id, Name name, Address address, Date hired) {
+	public Employee (int id, Name name, Address address, int date) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
-		this.hired = hired;
+		this.date = date;
 	}
 
 	public void showInfo() {
 		System.out.println("Id: " + id);
 		System.out.println("Name: " + name);
 		System.out.println("Address: " + address);
-		System.out.println("Hired On: " + hired);
+		System.out.println("Hired On: " + date);
 	}
 }
 
@@ -98,7 +98,7 @@ class Name {
 		this.lastName = lastName;
 	}
 	
-	public Name(String firstName) {
+	public Name(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -199,11 +199,7 @@ class Date {
 }
 
 /*
- * Test class for the program.
- */
-
-/*
- * Here is the main class that will have all of the project's logic and major control flow.
+ * Test class for the program, also will have the main class that will have all of the project's logic and major control flow.
  */
 
 public class EmployeeDatabase {
@@ -212,50 +208,48 @@ public class EmployeeDatabase {
 		headerMsg();
 		
 		// format: HourlyEmp(double earned, double hourlySalary, double workedHr, int id, Name name, Address address, Date hired)
-		System.out.println("\n+--- Hourly Employee 1: Less Than 40hrs ---+\n");
-		HourlyEmp emp1 = new HourlyEmp (0, 25, 24, 0, null, null, null);
+		System.out.println("\n+--- Hourly Employee 1: Works Less Than 40hrs ---+\n");
+		HourlyEmp emp1 = new HourlyEmp(0, 90, 39, 0, null, null, 0);
 		emp1.setId(001);
-		emp1.setName(new Name("Jon Deare"));
-		emp1.setAddress(new Address("123 Seseme St, SanFrancisco, 99912"));
-		//emp1.setDate(new Date("July 20 2020"));
+		emp1.setName(new Name("Jon", "Dear"));
+		emp1.setAddress(new Address("123 Seseme St, San Francisco, CA, 94320"));
+		emp1.setDate(3211990);
 		
 		System.out.println("id: " + emp1.getId());
 		System.out.println("Name: " + emp1.getName());
 		System.out.println("Address: " + emp1.getAddress());
 		System.out.println("Hired: " + emp1.getDate());
-		//System.out.println("Salary: " + emp1.getYearlySalary());
+		System.out.println("Salary: " + emp1.getEarned());
 		
 		//format: HourlyEmp(double earned, double hourlySalary, double workedHr, int id, Name name, Address address, Date hired)
-		System.out.println("\n+--- Hourly Employee 2: Works more than 40hrs---+\n");
-		HourlyEmp emp2 = new HourlyEmp (0, 50, 80, 0, null, null, null);
+		System.out.println("\n+--- Hourly Employee 2: Works More Than 40hrs---+\n");
+		HourlyEmp emp2 = new HourlyEmp(0, 67, 80, 0, null, null, 0);
 		emp2.setId(002);
-		emp2.setName(new Name("Yasmin Washington"));
+		emp2.setName(new Name("Yasmin", "Simone"));
 		emp2.setAddress(new Address("500 Battery St, SanFrancisco, 94111"));
-		//emp2.setDate(new Date("July 4 2020"));
+		emp2.setDate(4022009);
 		
 		System.out.println("id: " + emp2.getId());
 		System.out.println("Name: " + emp2.getName());
 		System.out.println("Address: " + emp2.getAddress());
 		System.out.println("Hired: " + emp2.getDate());
-		//System.out.println("Salary: " + emp2.getYearlySalary());
+		System.out.println("Salary: " + emp2.getEarned());
 		
 		
 		
 		System.out.println("\n+--- Salaried Employee ---+\n");
-		// format: int id, Name name, Address address, Date hired, double yearlySalary
-		SalariedEmp emp3 = new SalariedEmp(0, null, null, null, 0);
-		emp3.setId(03);
-		emp3.setName(new Name("Georgie Santana"));
-		emp3.setAddress(new Address("\n3 Civic St SanFrancisco ca 94111\n"));
-		//emp3.getDate(new Date("July 13 2010"));
+		// format: double yearlySalary, int id, Name name, Address address, int date
+		SalariedEmp emp3 = new SalariedEmp(90000, 0, null, null, 0);
+		emp3.setId(003);
+		emp3.setName(new Name("Georgie", "Santana"));
+		emp3.setAddress(new Address("\n237 Lombard St, SanFrancisco, CA 94111\n"));
+		emp3.setDate(7042014);
 		
 		System.out.println("id: " + emp3.getId());
 		System.out.println("Name: " + emp3.getName());
 		System.out.println("Address: " + emp3.getAddress());
 		System.out.println("Hired: " + emp3.getDate());
 		System.out.println("Salary: " + emp3.getYearlySalary());
-		
-		
 
 	}
 	
